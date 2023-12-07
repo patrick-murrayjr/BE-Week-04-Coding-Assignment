@@ -19,8 +19,8 @@ public class week4CodingAssignment {
 		 */
 		System.out.println("Question 1");
 		int[] ages = { 3, 9, 23, 64, 2, 8, 28, 93 };
-		System.out.print("ages" + Arrays.toString(ages));
-		System.out.println("\n");
+		System.out.println("ages" + Arrays.toString(ages));
+		System.out.println();
 		/*
 		 * a. Programmatically subtract the value of the first element in the array from
 		 * the value in the last element of the array (i.e. do not use ages[7] in your
@@ -143,7 +143,7 @@ public class week4CodingAssignment {
 		for (int item : nameLengths) {
 			sum += item;
 		}
-		System.out.println("The sum of the elements in nameLenghts is: " + sum);
+		System.out.println("The sum of the elements in nameLengths is: " + sum);
 		/*
 		 * 7. Write a method that takes a String, word, and an int, n, as arguments and
 		 * returns the word concatenated to itself n number of times. (i.e. if I pass in
