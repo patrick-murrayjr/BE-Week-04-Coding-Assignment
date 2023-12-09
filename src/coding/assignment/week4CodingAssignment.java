@@ -3,7 +3,7 @@
  * 
  * Patrick Murray
  *
- * 11/28/2023
+ * 12/09/2023
  * 
  */
 package coding.assignment;
@@ -317,7 +317,7 @@ public class week4CodingAssignment {
 	 */
 	public static double[] sortDoubleArray(double[] arr) {
 
-		int pos; // position in the array of the current element we are evaluating
+		int pos; // position in the array of the smallect element
 		double temp; // temporary placeholder variable
 
 		// loop through each element in the array
