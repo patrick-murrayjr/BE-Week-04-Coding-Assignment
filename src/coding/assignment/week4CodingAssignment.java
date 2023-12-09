@@ -216,73 +216,84 @@ public class week4CodingAssignment {
 
 	}
 
-	/** Method 13:<p>
+	/**
+	 * Method 13:
+	 * <p>
 	 * 
 	 * <code>displayStatistics</code>
 	 * 
-	 * a method that takes in an array of type double and finds common descriptive statistics
-	 * and prints theses values to the console.<p>
+	 * a method that takes in an array of type double and finds common descriptive
+	 * statistics
+	 * and prints theses values to the console.
+	 * <p>
 	 * 
-	 * - Min is the minimum value in the dataset<p>
-	 * - Max is the maximum value  in the dataset<p>
-	 * - Mean is the average of the values in the dataset<p>
-	 * - Median is the average of the centerpoint of the dataset<p>
-	 * - Sum is the sum value of all data in the dataset<p>
-	 * - Standard Deviation is the amount of the variation in the dataset<p>
+	 * - Min is the minimum value in the dataset
+	 * <p>
+	 * - Max is the maximum value in the dataset
+	 * <p>
+	 * - Mean is the average of the values in the dataset
+	 * <p>
+	 * - Median is the average of the centerpoint of the dataset
+	 * <p>
+	 * - Sum is the sum value of all data in the dataset
+	 * <p>
+	 * - Standard Deviation is the amount of the variation in the dataset
+	 * <p>
 	 * 
 	 * I have created this method as a exercise to practice using arrays, methods,
 	 * standard for loops and enhanced for loops,and if/else statements
+	 * 
 	 * @author Patrick Murray
 	 * @param dataSet an array of doubles containing the dataset
 	 */
 	public static void displayStatistics(double[] dataSet) {
-		
+
 		// Sort the dataset
 		double sortedArr[] = (sortDoubleArray(dataSet));
-		
+
 		int len = sortedArr.length;
 		double sum = 0;
 		double mean = 0;
 		double median = 0;
 		double standardDeviation = 0;
-		
-		
+
 		// min is first element of sorted array, max is last element
 		double min = sortedArr[0];
-		double max = sortedArr[sortedArr.length-1];
-		
-		//calculate sum
+		double max = sortedArr[len - 1];
+
+		// calculate sum
 		for (int i = 0; i < len; i++) {
 			// calculate sum
 			sum += sortedArr[i];
-
 		}
+
 		// find median
-		if (len % 2 == 0) {//if the dataset contains an even number of items
+		if (len % 2 == 0) {// if the dataset contains an even number of items
 			// find average of two middle values
 			median = (sortedArr[len / 2] + sortedArr[(len / 2) - 1]) / 2;
-		} else { //if the dataset contains an odd number of items
+		} else { // if the dataset contains an odd number of items
 			// find the middle value
 			median = sortedArr[len / 2];
 		}
 
 		// calculate mean
 		mean = sum / len;
-		
-		//calculate standard Deviation
 
-		//The variance for each data point is calculated by subtracting
-		//the mean from the value of the data point and then squaring the resulting value.
-		//each variance is added to the sum of all variances
-		for(double num: dataSet) {
-            standardDeviation += Math.pow(num - mean, 2);
-        }
-		// calculate the square root of the sum of variances divided by 
-		// the number of data points in the dataSet to find the standard deviation.
-		standardDeviation =Math.sqrt(standardDeviation/len);
-		
+		// calculate standard Deviation
+
+		// The deviation for each data point is calculated by subtracting
+		// the mean from the value of the data point and then squaring the resulting
+		// value.
+		// each deviation is added to the sum of all deviations
+		for (double num : sortedArr) {
+			standardDeviation += Math.pow(num - mean, 2);
+		}
+		// the variance is the mean of the sum of all deviations
+		// the standard deviation is the square root of the variance
+		standardDeviation = Math.sqrt(standardDeviation / len);
+
 		// print statistics to the console
-		System.out.println("Data Set: "+ Arrays.toString(sortedArr));
+		System.out.println("Data Set: " + Arrays.toString(sortedArr));
 		System.out.println("Min Value: " + min);
 		System.out.println("Max Value: " + max);
 		System.out.printf("Mean Value: %.4f\n", mean);
@@ -295,7 +306,8 @@ public class week4CodingAssignment {
 	/**
 	 * <code>sortDoubleArray</code>
 	 * 
-	 * a method that takes in an array of type double and returns a sorted array<p>
+	 * a method that takes in an array of type double and returns a sorted array
+	 * <p>
 	 * 
 	 * this method uses a selection sort to sort the array
 	 * 
@@ -311,10 +323,10 @@ public class week4CodingAssignment {
 		// loop through each element in the array
 		for (int i = 0; i < arr.length; i++) {
 			pos = i; // fix the position of the current element
-			
-			// loop through the remainder of the array 
+
+			// loop through the remainder of the array
 			for (int j = i + 1; j < arr.length; j++) {
-				
+
 				// find the index of the minimum element
 				if (arr[j] < arr[pos]) {
 					pos = j;
@@ -337,7 +349,7 @@ public class week4CodingAssignment {
 	 * a method that takes a boolean isHotOutside, and a double moneyInPocket, and
 	 * returns true if it is hot outside and if moneyInPocket is greater than 10.50
 	 * 
-	 * @param isHotOutside boolean
+	 * @param isHotOutside  boolean
 	 * @param moneyInPocket double
 	 * @return true if it is hot outside AND if moneyInPocket is greater than 10.50
 	 */
@@ -357,8 +369,9 @@ public class week4CodingAssignment {
 	 * 
 	 * @param arr1 double[]
 	 * @param arr2 double[]
-	 * @return true if the average of the elements in the first array is greater than
-	 *  the average of the elements in the second array
+	 * @return true if the average of the elements in the first array is greater
+	 *         than
+	 *         the average of the elements in the second array
 	 */
 	public static boolean isFirstAverageGreater(double[] arr1, double[] arr2) {
 		// uses getAverage to calculate the average of each array
@@ -417,8 +430,9 @@ public class week4CodingAssignment {
 	 * separated by a space)
 	 * 
 	 * @param firstName string
-	 * @param lastName string
-	 * @return the concatenation of firstName and lastName with a single space in between
+	 * @param lastName  string
+	 * @return the concatenation of firstName and lastName with a single space in
+	 *         between
 	 */
 	public static String printFullName(String firstName, String lastName) {
 		return firstName + " " + lastName;
@@ -433,7 +447,7 @@ public class week4CodingAssignment {
 	 * the word concatenated to itself n number of times
 	 * 
 	 * @param word string
-	 * @param n int
+	 * @param n    int
 	 * @return the input string concatenated to itself n number of times
 	 */
 	public static String repeatWord(String word, int n) {
